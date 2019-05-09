@@ -80,6 +80,7 @@
     "chai-http": "^4.2.1",
     "codelyzer": "~4.5.0",
     "concurrently": "^4.1.0",
+    "echo-cli": "^1.0.8",
     "htmlhint": "^0.10.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
