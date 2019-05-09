@@ -1,12 +1,13 @@
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { map } from 'rxjs/operators';
 
 import { UserService } from './user.service';
 import { User } from '../shared/models/user.model';
 
-import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class AuthService {
@@ -16,8 +17,8 @@ export class AuthService {
   currentUser: User = new User();
 
   constructor(private userService: UserService,
-              private router: Router,
-              private jwtHelper: JwtHelperService) {
+    private router: Router,
+    private jwtHelper: JwtHelperService) {
     const token = localStorage.getItem('token');
     if (token) {
       const decodedUser = this.decodeUserFromToken(token);
@@ -26,14 +27,14 @@ export class AuthService {
   }
 
   login(emailAndPassword) {
-    return this.userService.login(emailAndPassword).map(
+    return this.userService.login(emailAndPassword).pipe(map(
       res => {
         localStorage.setItem('token', res.token);
         const decodedUser = this.decodeUserFromToken(res.token);
         this.setCurrentUser(decodedUser);
         return this.loggedIn;
       }
-    );
+    ));
   }
 
   logout() {
