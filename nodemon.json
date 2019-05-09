@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "server"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    ".git",
+    "node_modules",
+    ".follow-up"
+  ],
+  "exec": "npm run server:dev"
+}
