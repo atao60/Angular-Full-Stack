@@ -34,7 +34,7 @@ mongoose.connect(mongodbURI)
     });
 
     if (!module.parent) {
-      app.listen(app.get('port'), () => console.log(`Angular Full Stack listening on port ${app.get('port')}`));
+      app.listen(app.get('port'), () => console.log(`MEAN Full Stack listening on port ${app.get('port')}`));
     }
   })
   .catch(err => console.error(err));

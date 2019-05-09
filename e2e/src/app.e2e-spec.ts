@@ -1,11 +1,11 @@
 import { browser } from 'protractor';
-import { Angular2FullStackPage } from './app.po';
+import { MeanFullStackPage } from './app.po';
 
-describe('angular2-full-stack App', () => {
-  let page: Angular2FullStackPage;
+describe('mean-full-stack App', () => {
+  let page: MeanFullStackPage;
 
   beforeEach(() => {
-    page = new Angular2FullStackPage();
+    page = new MeanFullStackPage();
   });
 
   it('should display the expanded navbar for high resolutions', () => {

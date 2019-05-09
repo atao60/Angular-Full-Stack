@@ -1,6 +1,6 @@
 import { $$, browser } from 'protractor';
 
-export class Angular2FullStackPage {
+export class MeanFullStackPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,9 +1,9 @@
 {
-  "name": "angular2-full-stack",
+  "name": "mean-full-stack",
   "version": "7.2.1",
   "license": "MIT",
   "author": "Davide Violante",
-  "description": "Angular Full Stack project built using Angular 2+, Express, Mongoose and Node.",
+  "description": "MEAN Full Stack project built using Angular 2+, Express, Mongoose and Node.",
   "engines": {
     "node": "8.11.1",
     "npm": "6.4.0"
