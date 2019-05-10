@@ -1,42 +1,55 @@
-import * as bcrypt from 'bcryptjs';
-import * as mongoose from 'mongoose';
+import { compare, genSalt, hash as bcHash } from 'bcryptjs';
+import { Document, model, Schema } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-  username: String,
+import { User } from '../../shared/models';
+
+export interface UserInput extends User {
+  password?: string;
+  comparePassword(candidatePassword: string, callback: (error: Error, isMatch?: boolean) => void): void;
+}
+
+export type UserType = UserInput & Document;
+
+const userSchema = new Schema({
+  username: { type: String, require: true },
   email: { type: String, unique: true, lowercase: true, trim: true },
   password: String,
   role: String
 });
 
 // Before saving the user, hash the password
-userSchema.pre('save', function(next) {
+userSchema.pre<UserType>('save', function (next) {
   const user = this;
   if (!user.isModified('password')) { return next(); }
-  bcrypt.genSalt(10, function(err, salt) {
-    if (err) { return next(err); }
-    bcrypt.hash(user.password, salt, function(error, hash) {
-      if (error) { return next(error); }
+  genSalt(10, (err, salt) => {
+    if (err) {
+      return next(err);
+    }
+    bcHash(user.password, salt, (error, hash) => {
+      if (error) {
+        return next(error);
+      }
       user.password = hash;
       next();
     });
   });
 });
 
-userSchema.methods.comparePassword = function(candidatePassword, callback) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-    if (err) { return callback(err); }
+userSchema.methods.comparePassword = function (candidatePassword: string, callback: (error: Error, isMatch?: boolean) => void) {
+  compare(candidatePassword, this.password, (err: Error, isMatch: boolean) => {
+    if (err) {
+      return callback(err);
+    }
     callback(null, isMatch);
   });
 };
 
 // Omit the password when returning a user
 userSchema.set('toJSON', {
-  transform: function(doc, ret, options) {
+  transform: (doc, ret, options) => {
     delete ret.password;
     return ret;
   }
 });
 
-const User = mongoose.model('User', userSchema);
-
-export default User;
+export default model<UserType>('User', userSchema);
