@@ -1,36 +1,38 @@
-import * as dotenv from 'dotenv';
+import { config } from 'dotenv';
 import * as express from 'express';
-import * as morgan from 'morgan';
+import { Application } from 'express';
 import * as mongoose from 'mongoose';
-import * as path from 'path';
+import * as morgan from 'morgan';
+import { join } from 'path';
+import { env } from 'process';
 
 import setRoutes from './routes';
 
-const app = express();
-dotenv.load({ path: '.env' });
-app.set('port', (process.env.PORT || 3000));
+const app: Application = express();
+config({ path: '.env' });
+app.set('port', (env.PORT || 3000));
 
-app.use('/', express.static(path.join(__dirname, '../public')));
+app.use('/', express.static(join(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-let mongodbURI;
-if (process.env.NODE_ENV === 'test') {
-  mongodbURI = process.env.MONGODB_TEST_URI;
+let mongodbURI: string;
+if (env.NODE_ENV === 'test') {
+  mongodbURI = env.MONGODB_TEST_URI;
 } else {
-  mongodbURI = process.env.MONGODB_URI;
+  mongodbURI = env.MONGODB_URI;
   app.use(morgan('dev'));
 }
 
-mongoose.Promise = global.Promise;
-mongoose.connect(mongodbURI)
-  .then(db => {
+// (mongoose as any).Promise = global.Promise;
+mongoose.connect(mongodbURI, { useNewUrlParser: true })
+  .then(() => {
     console.log('Connected to MongoDB');
 
     setRoutes(app);
 
-    app.get('/*', function(req, res) {
-      res.sendFile(path.join(__dirname, '../public/index.html'));
+    app.get('/*', (req, res) => {
+      res.sendFile(join(__dirname, '../public/index.html'));
     });
 
     if (!module.parent) {
