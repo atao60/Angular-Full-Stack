@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { Cat } from '../../../shared/models';
 import { CatService } from '../services/cat.service';
 import { ToastComponent } from '../shared/toast/toast.component';
-import { Cat } from '../shared/models/cat.model';
 
 @Component({
   selector: 'app-cats',

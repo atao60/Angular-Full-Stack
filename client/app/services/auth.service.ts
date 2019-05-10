@@ -4,10 +4,8 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map } from 'rxjs/operators';
 
-import { UserService } from './user.service';
 import { User } from '../shared/models/user.model';
-
-
+import { UserService } from './user.service';
 
 @Injectable()
 export class AuthService {

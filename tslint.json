@@ -1,8 +1,19 @@
 {
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  },
   "rulesDirectory": [
     "codelyzer"
   ],
   "rules": {
+    "interface-name": false,
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
@@ -118,12 +129,12 @@
       "check-type"
     ],
     "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
+    "use-input-property-decorator": false,
+    "use-output-property-decorator": false,
+    "use-host-property-decorator": false,
     "no-input-rename": true,
     "no-output-rename": true,
-    "use-life-cycle-interface": true,
+    "use-life-cycle-interface": false,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true

@@ -33,11 +33,11 @@
     "client:test:start": "concurrently -n \"mongo,client\" -c \"blue.bold,green.bold\" \"npm run mongo:start\" \"npm run mongo:waiton && npm run client:test\"",
     "server:test": "npm run server:build && mocha dist/server/test --exit",
     "server:test:start": "concurrently -n \"mongo,server\" -c \"blue.bold,yellow.bold\" \"npm run mongo:start\" \"npm run mongo:waiton && npm run server:test\"",
-    "lint": "concurrently -n \"client,server\" -c \"green.bold,yellow.bold\" \"npm run lint:client\" \"npm run lint:server\"",
-    "lint:client": "ng lint",
-    "lint:html": "htmlhint \"client/**/*.html\"",
-    "lint:scss": "sass-lint \"client/**/*.scss\" -v",
-    "lint:server": "tslint --project server/tsconfig.json --config tslint.json server/**/**.ts{,x} && echo-cli 'All lint rules checked with success'",
+    "lint": "concurrently -n \"client,server\" -c \"green.bold,yellow.bold\" \"npm run client:lint\" \"npm run server:lint\"",
+    "client:lint": "ng lint",
+    "html:lint": "htmlhint \"client/**/*.html\"",
+    "scss:lint": "sass-lint \"client/**/*.scss\" -v",
+    "server:lint": "tslint --project server/tsconfig.json --config tslint.json server/**/**.ts{,x} && echo-cli 'All lint rules checked with success'",
     "e2e:start": "ng e2e"
   },
   "private": true,
@@ -103,6 +103,7 @@
     "sass-lint": "^1.13.1",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.2.4"
   }
 }
