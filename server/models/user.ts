@@ -10,7 +10,7 @@ export interface UserInput extends User {
 
 export type UserType = UserInput & Document;
 
-const userSchema = new Schema({
+const userSchema = new Schema<UserType>({
   username: { type: String, require: true },
   email: { type: String, unique: true, lowercase: true, trim: true },
   password: String,
@@ -20,15 +20,20 @@ const userSchema = new Schema({
 // Before saving the user, hash the password
 userSchema.pre<UserType>('save', function (next) {
   const user = this;
-  if (!user.isModified('password')) { return next(); }
+  if (!user.isModified('password')) { 
+    return next(); 
+  }
+
   genSalt(10, (err, salt) => {
     if (err) {
       return next(err);
     }
+
     bcHash(user.password, salt, (error, hash) => {
       if (error) {
         return next(error);
       }
+
       user.password = hash;
       next();
     });
@@ -40,6 +45,7 @@ userSchema.methods.comparePassword = function (candidatePassword: string, callba
     if (err) {
       return callback(err);
     }
+
     callback(null, isMatch);
   });
 };

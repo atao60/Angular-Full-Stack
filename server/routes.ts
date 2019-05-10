@@ -1,11 +1,11 @@
-import * as express from 'express';
+import { Application, Router } from 'express';
 
-import CatCtrl from './controllers/cat';
-import UserCtrl from './controllers/user';
+import { CatCtrl } from './controllers';
+import { UserCtrl } from './controllers';
 
-export default function setRoutes(app) {
+export default function setRoutes(app: Application) {
 
-  const router = express.Router();
+  const router = Router();
 
   const catCtrl = new CatCtrl();
   const userCtrl = new UserCtrl();

@@ -1,6 +1,6 @@
-import Cat from '../models/cat';
-import BaseCtrl from './base';
+import { catSchema, CatType } from '../models';
+import { BaseCtrl } from './base';
 
-export default class CatCtrl extends BaseCtrl {
-  model = Cat;
+export default class CatCtrl extends BaseCtrl<CatType> {
+  model = catSchema;
 }

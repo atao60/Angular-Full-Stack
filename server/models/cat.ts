@@ -1,11 +1,15 @@
-import * as mongoose from 'mongoose';
+import { Document, model, Schema } from 'mongoose';
 
-const catSchema = new mongoose.Schema({
+import { Cat } from '../../shared/models';
+
+// export interface CatInput extends Cat { };
+
+export type CatType = /*CatInput*/ Cat & Document;
+
+const catSchema = new Schema<CatType>({
   name: String,
   weight: Number,
   age: Number
 });
 
-const Cat = mongoose.model('Cat', catSchema);
-
-export default Cat;
+export default model<CatType>('Cat', catSchema);
