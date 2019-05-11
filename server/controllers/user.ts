@@ -2,11 +2,11 @@ import { Request, Response } from 'express';
 import { sign } from 'jsonwebtoken';
 import { env } from 'process';
 
-import { userSchema, UserType } from '../models';
+import { userModel, UserType } from '../models';
 import { BaseCtrl } from './base';
 
 export default class UserCtrl extends BaseCtrl<UserType> {
-  model = userSchema;
+  model = userModel;
 
   login = (req: Request, res: Response) => {
     this.model.findOne({ email: req.body.email }, (err, user) => {
