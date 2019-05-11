@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { Cat } from '../../../shared/models';
-import { CatService } from '../services/cat.service';
+import { Cat } from '../../../../shared/models';
+import { CatService } from '../../services';
 import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
