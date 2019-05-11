@@ -13,6 +13,7 @@ Other tools and technologies used:
 * [Angular CLI](https://cli.angular.io): frontend scaffolding
 * [Bootstrap](https://getbootstrap.com): layout and styles
 * [Font Awesome](https://fontawesome.com): icons
+* [Google Fonts](https://fonts.google.com/): fonts for the WEB
 * [JSON Web Token](https://jwt.io): user authentication
 * [Angular 2 JWT](https://github.com/auth0/angular2-jwt): JWT helper for Angular 2+
 * [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js): password encryption
@@ -116,7 +117,7 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * Technical and business logging
 * Deployment on Docker
 
-## Credits & License
+## Credits
 
 * [DavideViolante/Angular-Full-Stack](https://github.com/DavideViolante/Angular-Full-Stack), Angular Full Stack project built using Angular 2+, Express, Mongoose and Node - And Bootstrap. Whole stack in TypeScript. 
 
@@ -125,6 +126,8 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * [madhums/node-express-mongoose](https://github.com/madhums/node-express-mongoose), alike MEAN above
 
 * [mkg20001/wait-for-mongo](https://github.com/mkg20001/wait-for-mongo)
+
+## License
 
 [MIT License](./LICENSE)
 

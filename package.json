@@ -38,7 +38,12 @@
     "html:lint": "htmlhint \"client/**/*.html\"",
     "scss:lint": "sass-lint \"client/**/*.scss\" -v",
     "server:lint": "tslint --project server/tsconfig.json --config tslint.json server/**/**.ts{,x} && echo-cli 'All lint rules checked with success'",
-    "e2e:start": "ng e2e"
+    "e2e:start": "ng e2e",
+    "postinstall": "npm run fonts:install",
+    "prefonts:install": "mkdirp ./client/stylesheets",
+    "fonts:install": "concurrently \"npm run raleway-fonts:install\" \"npm run lato-fonts:install\"",
+    "raleway-fonts:install": "goog-webfont-dl -a -d ./client/assets/fonts/raleway -p '../fonts/raleway' -o ./client/stylesheets/raleway-fonts.css -y 400,300,600,700,900 Raleway",
+    "lato-fonts:install": "goog-webfont-dl -a -d ./client/assets/fonts/lato -p '../fonts/lato' -o ./client/stylesheets/lato-fonts.css -y 400,700,900,300 Lato"
   },
   "private": true,
   "dependencies": {
@@ -87,7 +92,9 @@
     "chai-http": "^4.3.0",
     "codelyzer": "^5.0.1",
     "concurrently": "^4.1.0",
+    "cpy": "^7.2.0",
     "echo-cli": "^1.0.8",
+    "goog-webfont-dl": "^1.0.2",
     "htmlhint": "^0.11.0",
     "jasmine-core": "^3.4.0",
     "jasmine-spec-reporter": "^4.2.1",
@@ -96,6 +103,7 @@
     "karma-coverage-istanbul-reporter": "^2.0.5",
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "mkdirp": "^0.5.1",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.0",
     "protractor": "^5.4.2",
