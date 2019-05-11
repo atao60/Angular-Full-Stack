@@ -8,13 +8,15 @@ import { AboutComponent } from './components/about/about.component';
 import { AccountComponent } from './components/account/account.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CatsComponent } from './components/cats/cats.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'cats', component: CatsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -25,9 +27,20 @@ const routes: Routes = [
   { path: '**', redirectTo: '/notfound' },
 ];
 
+export const appRoutingComponents = [
+  HomeComponent,
+  AboutComponent,
+  CatsComponent,
+  RegisterComponent,
+  LoginComponent,
+  LogoutComponent,
+  AccountComponent,
+  AdminComponent,
+  NotFoundComponent
+];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule {}
