@@ -118,13 +118,13 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 ## Credits & License
 
-[DavideViolante/Angular-Full-Stack](https://github.com/DavideViolante/Angular-Full-Stack), Angular Full Stack project built using Angular 2+, Express, Mongoose and Node - And Bootstrap. Whole stack in TypeScript. 
+* [DavideViolante/Angular-Full-Stack](https://github.com/DavideViolante/Angular-Full-Stack), Angular Full Stack project built using Angular 2+, Express, Mongoose and Node - And Bootstrap. Whole stack in TypeScript. 
 
-[MEAN](http://mean.io/), without Typescript and with Material, not Bootstrap
+* [MEAN](http://mean.io/), without Typescript and with Material, not Bootstrap
 
-[madhums/node-express-mongoose](https://github.com/madhums/node-express-mongoose), alike MEAN above
+* [madhums/node-express-mongoose](https://github.com/madhums/node-express-mongoose), alike MEAN above
 
-[mkg20001/wait-for-mongo](https://github.com/mkg20001/wait-for-mongo)
+* [mkg20001/wait-for-mongo](https://github.com/mkg20001/wait-for-mongo)
 
 [MIT License](./LICENSE)
 
