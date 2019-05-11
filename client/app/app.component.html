@@ -10,7 +10,8 @@
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Cats Book</a>
+    <a class="navbar-brand"
+       href="#">Cats Book</a><!-- with href="#", will reload the application-->
     <div class="collapse navbar-collapse"
          id="navbar-supported-content">
       <ul class="navbar-nav mr-auto">
@@ -29,6 +30,14 @@
             <i class="fa fa-list"></i> Cats
           </a>
         </li>
+        <li *ngIf="auth.loggedIn && auth.isAdmin"
+            class="nav-item">
+          <a routerLink="/admin"
+             class="nav-link"
+             routerLinkActive="active">
+            <i class="fa fa-lock"></i> Admin
+          </a>
+        </li>
         <li class="nav-item">
           <a routerLink="/about"
              class="nav-link"
@@ -36,9 +45,10 @@
             <i class="fa fa-question"></i> About
           </a>
         </li>
-      </ul>  
+      </ul>
       <ul class="navbar-nav ml-auto">
-        <ng-container *ngIf="!auth.loggedIn">
+        <ng-container *ngIf="auth.loggedIn; then loggedInMenu else notLoggedInMenu"></ng-container>
+        <ng-template #notLoggedInMenu>
           <li class="nav-item">
             <a routerLink="/login"
                class="nav-link"
@@ -53,21 +63,13 @@
               <i class="fa fa-user-plus"></i> Register
             </a>
           </li>
-        </ng-container>
-        <ng-container *ngIf="auth.loggedIn">
+        </ng-template>
+        <ng-template #loggedInMenu>
           <li class="nav-item">
             <a routerLink="/account"
                class="nav-link"
                routerLinkActive="active">
               <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/admin"
-               class="nav-link"
-               routerLinkActive="active"
-               *ngIf="auth.isAdmin">
-              <i class="fa fa-lock"></i> Admin
             </a>
           </li>
           <li class="nav-item">
@@ -77,7 +79,7 @@
               <i class="fa fa-sign-out"></i> Logout
             </a>
           </li>
-        </ng-container>
+        </ng-template>
       </ul>
     </div>
   </nav>
