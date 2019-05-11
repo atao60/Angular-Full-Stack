@@ -1,6 +1,5 @@
 # MEAN Full Stack [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 
-
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. The whole stack is written in [TypeScript](https://www.typescriptlang.org).
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
@@ -19,15 +18,24 @@ Other tools and technologies used:
 * [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js): password encryption
 
 ## Prerequisites
-1. [Git](https://git-scm.com/)
+
+1. [Git](https://git-scm.com/) (°)
 2. [Node.js](https://nodejs.org/en/download/) 
 3. npm - comes with Node.js
 4. [MongoDB](https://www.mongodb.com/download-center/community)
 5. [Angular-CLI](https://cli.angular.io/)
 
-About Git, see [How to Install Git on Linux, Mac or Windows](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/), January 29, 2019 by Linode
+Check softwares' status:
+```bash
+git --version
+mongod --version
+node --version
+npm --version 
+npm list -g --depth 0 2>&1 | grep @angular/cli # (°°)
+```
+> (°) About installing Git, see [How to Install Git on Linux, Mac or Windows](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/), January 29, 2019 by Linode
 
-About Angular-CLI, run `npm i -g @angular/cli`
+> (°°) See below about rechecking Angular-CLI's status under the project's folder
 
 ## Installation
 
@@ -35,8 +43,19 @@ About Angular-CLI, run `npm i -g @angular/cli`
 git clone https://github.com/atao60/MEAN-Full-Stack mean-full-stack
 cd mean-full-stack
 npm install
-npm dev:start
 ```
+Check @angular/cli and npm packages' status:
+```bash
+npm outdated # See notes below
+npm audit
+ng --version
+```
+
+> About `zone.js`. It has been installed with version constrained to 0.8.26 ( `npm i -S zone.js@0.8.26`) to please @angular/core@7.2.15.
+
+> About `typescript`. It has been installed with version constrained to ">=3.1.1 <3.3" (`npm i -D typescript@">=3.1.1 <3.3"`) to please @angular/cli@7.3.9.
+
+> About `jQuery`. It has been installed in section `dependencies` of `package.json` to avoid exception during tests. But the production build (even in stage mode) embedded `bootstrap` without it: a warning "TypeError: g is undefined" (or any other name in place of "g") is displayed on the browser console during application loading. This message can be safely ignored.
 
 ## Run
 
@@ -59,10 +78,6 @@ Run the application:
 npm run stage:start
 ```
 It will launch MongoDB, build the project with a production bundle and AOT compilation then run it with server listening at [localhost:3000](http://localhost:3000).
-
-## Deploy on Docker
-
-***TODO***
 
 ## Preview
 
@@ -88,22 +103,28 @@ Run `npm run lint:scss` to execute the frontend SCSS linting via [SASS-Lint](htt
 
 ## Wiki
 
-To get more help about this project, [visit the official wiki](https://github.com/atao60/MEAN-Full-Stack/wiki).
+To get more help about this project, [visit the project wiki](https://github.com/atao60/MEAN-Full-Stack/wiki).
 
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Roadmap
+
+* @ng-bootstrap/ng-bootstrap or ngx-bootstrap
+* I18n
+* Technical and business logging
+* Deployment on Docker
+
 ## Credits & License
 
 [DavideViolante/Angular-Full-Stack](https://github.com/DavideViolante/Angular-Full-Stack), Angular Full Stack project built using Angular 2+, Express, Mongoose and Node - And Bootstrap. Whole stack in TypeScript. 
 
-[MEAN](http://mean.io/), without Typescript, with Material, not Bootstrap
+[MEAN](http://mean.io/), without Typescript and with Material, not Bootstrap
 
 [madhums/node-express-mongoose](https://github.com/madhums/node-express-mongoose), alike MEAN above
 
 [mkg20001/wait-for-mongo](https://github.com/mkg20001/wait-for-mongo)
-
 
 [MIT License](./LICENSE)
 
