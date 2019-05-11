@@ -41,7 +41,7 @@ describe('Component: App', () => {
   it('should display the navigation bar correctly for guests', () => {
     const de = fixture.debugElement.queryAll(By.css('a'));
     expect(de.length).toBe(6);
-    var i = 0;
+    let i = 0;
     expect(de[i++].nativeElement.textContent).toContain('Cats Book');
     expect(de[i++].nativeElement.textContent).toContain('Home');
     expect(de[i++].nativeElement.textContent).toContain('Cats');
@@ -62,7 +62,7 @@ describe('Component: App', () => {
     fixture.detectChanges();
     const de = fixture.debugElement.queryAll(By.css('a'));
     expect(de.length).toBe(6);
-    var i = 0;
+    let i = 0;
     expect(de[i++].nativeElement.textContent).toContain('Cats Book');
     expect(de[i++].nativeElement.textContent).toContain('Home');
     expect(de[i++].nativeElement.textContent).toContain('Cats');
@@ -84,7 +84,7 @@ describe('Component: App', () => {
     fixture.detectChanges();
     const de = fixture.debugElement.queryAll(By.css('a'));
     expect(de.length).toBe(7);
-    var i = 0;
+    let i = 0;
     expect(de[i++].nativeElement.textContent).toContain('Cats Book');
     expect(de[i++].nativeElement.textContent).toContain('Home');
     expect(de[i++].nativeElement.textContent).toContain('Cats');

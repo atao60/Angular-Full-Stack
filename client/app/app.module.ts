@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 
-import { AppRoutingModule, appRoutingComponents } from './app-routing.module';
+import { appRoutingComponents, AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './components/shared/shared.module';
 
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
