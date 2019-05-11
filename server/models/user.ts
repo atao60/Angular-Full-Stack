@@ -20,8 +20,8 @@ const userSchema = new Schema<UserType>({
 // Before saving the user, hash the password
 userSchema.pre<UserType>('save', function (next) {
   const user = this;
-  if (!user.isModified('password')) { 
-    return next(); 
+  if (!user.isModified('password')) {
+    return next();
   }
 
   genSalt(10, (err, salt) => {
