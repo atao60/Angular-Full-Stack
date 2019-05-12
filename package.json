@@ -38,6 +38,7 @@
     "html:lint": "htmlhint \"client/**/*.html\"",
     "scss:lint": "sass-lint \"client/**/*.scss\" -v",
     "server:lint": "tslint --project server/tsconfig.json --config tslint.json server/**/**.ts{,x} & echo-cli 'All lint rules checked with success'",
+    "pree2e:start": "tsc -p e2e",
     "e2e:start": "ng e2e",
     "postinstall": "npm run fonts:install",
     "prefonts:install": "mkdirp ./client/stylesheets",
