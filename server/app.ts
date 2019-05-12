@@ -8,6 +8,12 @@ import { env } from 'process';
 
 import setRoutes from './routes';
 
+const MONGOOSE_OPTIONS = {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+};
+
 const app: Application = express();
 config({ path: '.env' });
 app.set('port', (env.PORT || 3000));
@@ -25,7 +31,7 @@ if (env.NODE_ENV === 'test') {
 }
 
 // (mongoose as any).Promise = global.Promise;
-mongoose.connect(mongodbURI, { useNewUrlParser: true })
+mongoose.connect(mongodbURI, MONGOOSE_OPTIONS)
   .then(() => {
     console.log('Connected to MongoDB');
 

@@ -19,7 +19,7 @@ export abstract class BaseCtrl<T extends Document> {
   count = async (req: Request, res: Response) => {
     try {
       const selector: any = undefined; // TODO: try retrieve selector from request
-      const count = await this.model.count(selector);
+      const count = await this.model.countDocuments(selector);
       res.status(200).json(count);
     } catch (err) {
       return res.status(400).json({ error: err.message });

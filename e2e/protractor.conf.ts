@@ -2,7 +2,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 import { SpecReporter } from 'jasmine-spec-reporter';
-
+import { join } from 'path';
 import { register } from 'ts-node';
 
 export const config = {
@@ -19,11 +19,11 @@ export const config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function () { }
+    print: () => { }
   },
   onPrepare() {
     register({
-      project: require('path').join(__dirname, '../tsconfig.e2e.json')
+      project: join(__dirname, '../tsconfig.e2e.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
