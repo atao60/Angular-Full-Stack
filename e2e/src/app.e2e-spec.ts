@@ -11,10 +11,12 @@ describe('mean-full-stack App', () => {
   it('should display the expanded navbar for high resolutions', () => {
     browser.manage().window().setSize(1024, 768);
     page.navigateTo();
-    expect(page.getNavbarElement(0)).toEqual('Home');
-    expect(page.getNavbarElement(1)).toEqual('Cats');
-    expect(page.getNavbarElement(2)).toEqual('Login');
-    expect(page.getNavbarElement(3)).toEqual('Register');
+    let i = 1;
+    expect(page.getNavbarElement(i++)).toEqual('Home');
+    expect(page.getNavbarElement(i++)).toEqual('Cats');
+    expect(page.getNavbarElement(i++)).toEqual('About');
+    expect(page.getNavbarElement(i++)).toEqual('Login');
+    expect(page.getNavbarElement(i++)).toEqual('Register');
     expect(page.getNavbarButton()).toBeFalsy();
   });
 

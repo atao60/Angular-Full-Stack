@@ -20,23 +20,27 @@ Other tools and technologies used:
 
 ## Prerequisites
 
-1. [Git](https://git-scm.com/) (°)
-2. [Node.js](https://nodejs.org/en/download/) 
+1. [Git](https://git-scm.com/) <sup>(1)</sup>
+2. [Node.js](https://nodejs.org/en/download/)
 3. npm - comes with Node.js
 4. [MongoDB](https://www.mongodb.com/download-center/community)
-5. [Angular-CLI](https://cli.angular.io/)
+5. [Chrome](https://www.google.com/chrome/)
+6. [Angular-CLI](https://cli.angular.io/)
 
 Check softwares' status:
 ```bash
 git --version
 mongod --version
-node --version
+node --version # (2)
 npm --version 
-npm list -g --depth 0 2>&1 | grep @angular/cli # (°°)
+google-chrome --version # (2)
+npm list -g --depth 0 2>&1 | grep @angular/cli # (3)
 ```
-> (°) About installing Git, see [How to Install Git on Linux, Mac or Windows](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/), January 29, 2019 by Linode
+> <sup>(1)</sup> About installing Git, see [How to Install Git on Linux, Mac or Windows](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/), January 29, 2019 by Linode.
 
-> (°°) See below about rechecking Angular-CLI's status under the project's folder
+> <sup>(2)</sup> To avoid trouble with Protractor 5.4.2, Node version should be at least 10.15.3 and Chrome version at least 74.0.3729.131-1. Check that `webdriver-manager` is in version 12.1.4. If needed, run `npm i -D protractor`: with Node 10.15.3+, it will update `webdriver-manager` with the requiered version.
+
+> <sup>(3)</sup> See below about rechecking Angular-CLI's status under the project's folder.
 
 ## Installation
 
