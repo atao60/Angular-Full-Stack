@@ -90,7 +90,7 @@
             "main": "client/test.ts",
             "polyfills": "client/polyfills.ts",
             "tsConfig": "client/tsconfig.spec.json",
-            "karmaConfig": "client/karma.conf.js",
+            "karmaConfig": "client/karma.conf.ts",
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
