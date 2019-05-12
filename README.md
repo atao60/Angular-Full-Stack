@@ -56,8 +56,6 @@ ng --version
 
 > About `typescript`. It has been installed with version constrained to ">=3.1.1 <3.3" (`npm i -D typescript@">=3.1.1 <3.3"`) to please @angular/cli@7.3.9.
 
-> About `jQuery`. It has been installed in section `dependencies` of `package.json` to avoid exception during tests. But the production build (even in stage mode) embedded `bootstrap` without it: a warning "TypeError: g is undefined" (or any other name in place of "g") is displayed on the browser console during application loading. This message can be safely ignored.
-
 ## Run
 
 ### Development mode
