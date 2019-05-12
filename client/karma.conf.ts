@@ -3,16 +3,23 @@
 
 import { join } from 'path';
 
+import * as karmaJasmine from 'karma-jasmine';
+import * as karmaChromeLauncher from 'karma-chrome-launcher';
+import * as karmaJasmineHtmlReporter from 'karma-jasmine-html-reporter';
+import * as karmaCoverageIstanbulReporter from 'karma-coverage-istanbul-reporter';
+
+const angularKarma = require('@angular-devkit/build-angular/plugins/karma');
+
 export default function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      karmaJasmine,
+      karmaChromeLauncher,
+      karmaJasmineHtmlReporter,
+      karmaCoverageIstanbulReporter,
+      angularKarma
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
