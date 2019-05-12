@@ -88,17 +88,17 @@ describe('Component: App', () => {
     expect(de[i++].nativeElement.textContent).toContain('Cats Book');
     expect(de[i++].nativeElement.textContent).toContain('Home');
     expect(de[i++].nativeElement.textContent).toContain('Cats');
+    expect(de[i++].nativeElement.textContent).toContain('Admin');
     expect(de[i++].nativeElement.textContent).toContain('About');
     expect(de[i++].nativeElement.textContent).toContain('Account (Tester)');
-    expect(de[i++].nativeElement.textContent).toContain('Admin');
     expect(de[i++].nativeElement.textContent).toContain('Logout');
     i = 0;
     expect(de[i++].attributes['href']).toBe('#');
     expect(de[i++].attributes['routerLink']).toBe('/');
     expect(de[i++].attributes['routerLink']).toBe('/cats');
+    expect(de[i++].attributes['routerLink']).toBe('/admin');
     expect(de[i++].attributes['routerLink']).toBe('/about');
     expect(de[i++].attributes['routerLink']).toBe('/account');
-    expect(de[i++].attributes['routerLink']).toBe('/admin');
     expect(de[i++].attributes['routerLink']).toBe('/logout');
   });
 
