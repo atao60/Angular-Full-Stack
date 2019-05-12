@@ -84,7 +84,11 @@ It will launch MongoDB, build the project with a production bundle and AOT compi
 
 ## Running tests
 
-Run `ng test:start` to execute the backend tests (via [Mocha](https://mochajs.org/)) and frontend unit tests (via [Karma](https://karma-runner.github.io)).
+Run `ng test:start` to execute the backend unit tests (via [Mocha](https://mochajs.org/)) and frontend unit tests (via [Karma](https://karma-runner.github.io)).
+
+Run `npm run test:client:start` to execute the frontend unit tests via [Karma](https://karma-runner.github.io).
+
+Run `npm run test:server:start` to execute the backend unit tests via [Mocha](https://mochajs.org/).
 
 Run `ng e2e:start` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
