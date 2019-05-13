@@ -11,7 +11,7 @@ This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_
 Other tools and technologies used:
 * [Mongoose.js](https://mongoosejs.com): MongoDB object modeling 
 * [Angular CLI](https://cli.angular.io): frontend scaffolding
-* [Bootstrap](https://getbootstrap.com): layout and styles
+* [Bootstrap](https://getbootstrap.com) with [Ng-Bootstrap](https://ng-bootstrap.github.io): layout and styles
 * [Font Awesome](https://fontawesome.com): icons
 * [Google Fonts](https://fonts.google.com/): fonts for the WEB
 * [JSON Web Token](https://jwt.io): user authentication

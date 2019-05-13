@@ -37,7 +37,6 @@
               ]
             },
             "scripts": [
-              "node_modules/tether/dist/js/tether.min.js"
             ]
           },
           "configurations": {
@@ -102,7 +101,6 @@
               ]
             },
             "scripts": [
-              "node_modules/tether/dist/js/tether.min.js"
             ],
             "assets": [
               "client/assets/favicon.ico",

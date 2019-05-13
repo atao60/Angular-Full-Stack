@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { appRoutingComponents, AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './components/shared/shared.module';
@@ -23,6 +24,7 @@ export function tokenGetter() {
   ],
   imports: [
     AppRoutingModule,
+    NgbModule,
     SharedModule,
     JwtModule.forRoot({
       config: {

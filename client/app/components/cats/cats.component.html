@@ -62,11 +62,11 @@
   <h4 class="card-header">Add new cat</h4>
   <div class="card-body">
     <form class="form-inline" [formGroup]="addCatForm" (ngSubmit)="addCat()">
-      <input class="form-control mr-2" type="text" name="name"
+      <input class="form-control mr-2" type="text" name="name" ngbTooltip="Cat Name"
              formControlName="name" placeholder="Name">
-      <input class="form-control mr-2" type="number" name="age"
+      <input class="form-control mr-2" type="number" name="age" ngbTooltip="Cat Age"
              formControlName="age" placeholder="Age" min="0">
-      <input class="form-control mr-2" type="number" name="weight"
+      <input class="form-control mr-2" type="number" name="weight" ngbTooltip="Cat Weight"
              formControlName="weight" placeholder="Weight" step="any" min="0">
       <button class="btn btn-primary" type="submit" [disabled]="!addCatForm.valid">
         <i class="fa fa-plus"></i> Add
