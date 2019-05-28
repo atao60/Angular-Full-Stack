@@ -6,8 +6,6 @@ import { env } from 'process';
 import { app } from '../app';
 import Cat from '../models/cat';
 
-env.NODE_ENV = 'test';
-
 chai.use(chaiHttp).should();
 
 describe('Cats', () => {

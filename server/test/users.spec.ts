@@ -6,8 +6,6 @@ import { env } from 'process';
 import { app } from '../app';
 import User from '../models/user';
 
-env.NODE_ENV = 'test';
-
 chai.use(chaiHttp).should();
 
 describe('Users', () => {
