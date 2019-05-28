@@ -1,16 +1,15 @@
 # MEAN Full Stack [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 
-The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. The whole stack is written in [TypeScript](https://www.typescriptlang.org).
-
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoDB](https://www.mongodb.com): database
 * [**E**xpress.js](https://expressjs.com): backend web application framework running on top of Node.js
 * [**A**ngular 2+](https://angular.io): front-end web app framework; runs your JavaScript code in the user’s browser, allowing your application UI to be dynamic
 * [**N**ode.js](https://nodejs.org): JavaScript runtime environment – lets you implement your application back-end in JavaScript
 
+The frontend is generated with [Angular CLI](https://cli.angular.io). The backend is made from scratch. The whole stack is written in [TypeScript](https://www.typescriptlang.org).
+
 Other tools and technologies used:
 * [Mongoose.js](https://mongoosejs.com): MongoDB object modeling 
-* [Angular CLI](https://cli.angular.io): frontend scaffolding
 * [Bootstrap](https://getbootstrap.com) with [Ng-Bootstrap](https://ng-bootstrap.github.io): layout and styles
 * [Font Awesome](https://fontawesome.com): icons
 * [Google Fonts](https://fonts.google.com/): fonts for the WEB
@@ -22,7 +21,7 @@ Other tools and technologies used:
 
 1. [Git](https://git-scm.com/) <sup>(1)</sup>
 2. [Node.js](https://nodejs.org/en/download/)
-3. npm - comes with Node.js
+3. [npm](https://www.npmjs.com/) - comes with Node.js
 4. [MongoDB](https://www.mongodb.com/download-center/community)
 5. [Chrome](https://www.google.com/chrome/)
 6. [Angular-CLI](https://cli.angular.io/)
@@ -47,9 +46,11 @@ npm list -g --depth 0 2>&1 | grep @angular/cli # (3)
 ```bash
 git clone https://github.com/atao60/MEAN-Full-Stack mean-full-stack
 cd mean-full-stack
+cp .env.example .env
 npm install
 ```
 Check @angular/cli and npm packages' status:
+
 ```bash
 npm outdated # See notes below
 npm audit
@@ -118,7 +119,8 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 ## Roadmap
 
-* @ng-bootstrap/ng-bootstrap or ngx-bootstrap
+* Socket.io
+* WebComponent
 * I18n
 * Technical and business logging
 * Deployment on Docker
