@@ -1,3 +1,5 @@
+import { config } from '../../server/config/config';
+
 import { argv, env, exit } from 'process';
 
 import { waitOnMongo } from './waiton-mongo';
@@ -5,16 +7,21 @@ import { waitOnMongo } from './waiton-mongo';
 const MONGO_URL = argv[2] || env.MONGO_URL;
 const TIMEOUT = +(argv[3] || env.TIMEOUT);
 
-if (!MONGO_URL) {
-  console.error("MONGO_URL is not provided either using first paramater or as a env variable");
+const url = MONGO_URL ? MONGO_URL : config.mongodbURL;
+
+if (!url) {
+  console.error("MONGO_URL is not provided either as first paramater or as env variable, or through MONGO_HOST");
   exit(1);
 }
 
-waitOnMongo(MONGO_URL, { timeout: TIMEOUT }, function (error: Error) {
+const options = (TIMEOUT != null) ? { timeout: TIMEOUT } : undefined;
+
+waitOnMongo(url, options, (error: Error) => {
   if (error) {
     throw error;
-  } else {
-    console.log('Mongo is running: connected with success');
-    exit(0);
-  }
+  } 
+
+  console.log('Mongo is running: connected with success');
+  exit(0);
+  
 });
