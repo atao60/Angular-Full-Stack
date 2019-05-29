@@ -10,7 +10,7 @@ The frontend is generated with [Angular CLI](https://cli.angular.io). The backen
 
 Other tools and technologies used:
 * [Mongoose.js](https://mongoosejs.com): MongoDB object modeling 
-* [Bootstrap](https://getbootstrap.com) with [Ng-Bootstrap](https://ng-bootstrap.github.io): layout and styles
+* [Bootstrap](https://getbootstrap.com) with [Ng-Bootstrap](https://ng-bootstrap.github.io): layout, styles and widgets
 * [Font Awesome](https://fontawesome.com): icons
 * [Google Fonts](https://fonts.google.com/): fonts for the WEB
 * [JSON Web Token](https://jwt.io): user authentication
