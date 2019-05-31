@@ -1,4 +1,7 @@
-# MEAN Full Stack [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
+# MEAN Full Stack [![Dependencies](https://david-dm.org/atao60/MEAN-full-Stack.svg)](https://david-dm.org/atao60/MEAN-Full-Stack) [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
+
+
+https://github.com/atao60/MEAN-Full-Stack
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoDB](https://www.mongodb.com): database
@@ -57,11 +60,13 @@ npm audit
 ng --version
 ```
 
-> About `zone.js`. It has been installed with version constrained to 0.8.26 ( `npm i -S zone.js@0.8.26`) to please @angular/core@7.2.15.
+> About `zone.js`. It is pinned to version 0.8.29 ( `npm i -S zone.js@0.8.29`) to please @angular/core@7.2.15.
 
 > About `typescript`. It has been installed with version constrained to ">=3.1.1 <3.3" (`npm i -D typescript@">=3.1.1 <3.3"`) to please @angular/cli@7.3.9.
 
 ## Run
+
+All the npm scripts should work as it under Linux and Windows.
 
 ### Development mode
 
