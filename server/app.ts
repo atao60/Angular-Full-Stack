@@ -15,7 +15,7 @@ const MONGOOSE_OPTIONS = {
 };
 
 const app: Application = express();
-app.set('port', config.port);
+app.set('port', config.api.port);
 
 app.use('/', express.static(join(__dirname, '../public')));
 app.use(express.json());
@@ -25,7 +25,7 @@ if (config.env !== 'test') {
   app.use(morgan('dev'));
 }
 
-mongoose.connect(config.mongodbURL, MONGOOSE_OPTIONS)
+mongoose.connect(config.mongodb.url, MONGOOSE_OPTIONS)
   .then(() => {
     console.log('Connected to MongoDB');
 

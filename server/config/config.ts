@@ -9,9 +9,18 @@ const envVarsSchema = Joi.object({
     .description("The application environment")
     .allow(['development', 'production', 'test', 'provision'])
     .default('development'),
+  API_CONTEXT: Joi.string()
+    .description("API Server Context Path")
+    .default('/api'),
+  API_HOST: Joi.string()
+    .description("API Server Host")
+    .default('localhost'),
   API_PORT: Joi.number()
     .description("API Server Port")
     .default(3000),
+  API_PATH: Joi.string()
+    .description("API Server Redirection Path")
+    .default(''),
   MONGOOSE_DEBUG: Joi.boolean()
     .when('NODE_ENV', {
       is: Joi.string().equal('development'),
@@ -40,6 +49,23 @@ if (error) {
   throw new Error(`Configuration validation error: ${error.message}`);
 }
 
+// ATM doesn't manage security: use only localhost or possibly LAN 
+const apiURL = [
+  'http://',
+  envVars.API_HOST,
+  ':',
+  envVars.API_PORT,
+  envVars.API_PATH && envVars.API_PATH[0] !== '/' ? '/' : '',
+  envVars.API_PATH
+].join('');
+
+const apiProxy = {
+  [envVars.API_CONTEXT]: {
+    "target": apiURL,
+    "secure": false
+  }
+}
+
 const mongodbURL = [
   'mongodb://',
   envVars.MONGO_HOST,
@@ -51,9 +77,15 @@ const mongodbURL = [
 
 export const config = {
   env: envVars.NODE_ENV,
-  port: envVars.API_PORT,
   mongooseDebug: envVars.MONGOOSE_DEBUG,
   jwtSecret: envVars.SECRET_TOKEN,
   frontend: envVars.MEAN_FRONTEND || 'angular',
-  mongodbURL
+  mongodb: {
+    port: envVars.MONGO_PORT,
+    url: mongodbURL
+  },
+  api: {
+    port: envVars.API_PORT,
+    proxy: apiProxy
+  }
 };

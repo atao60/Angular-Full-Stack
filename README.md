@@ -123,6 +123,7 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * WebComponent
 * I18n
 * Technical and business logging
+* Deployment on a server
 * Deployment on Docker
 
 ## Credits
@@ -134,6 +135,8 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * [madhums/node-express-mongoose](https://github.com/madhums/node-express-mongoose), alike MEAN above
 
 * [mkg20001/wait-for-mongo](https://github.com/mkg20001/wait-for-mongo)
+
+* [vielhuber/from-env](https://github.com/vielhuber/from-env)
 
 ## License
 

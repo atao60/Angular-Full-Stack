@@ -7,7 +7,7 @@ import { waitOnMongo } from './waiton-mongo';
 const MONGO_URL = argv[2] || env.MONGO_URL;
 const TIMEOUT = +(argv[3] || env.TIMEOUT);
 
-const url = MONGO_URL ? MONGO_URL : config.mongodbURL;
+const url = MONGO_URL ? MONGO_URL : config.mongodb.url;
 
 if (!url) {
   console.error("MONGO_URL is not provided either as first paramater or as env variable, or through MONGO_HOST");
