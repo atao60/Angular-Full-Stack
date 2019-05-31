@@ -49,7 +49,7 @@ if (error) {
   throw new Error(`Configuration validation error: ${error.message}`);
 }
 
-// ATM doesn't manage security: use only localhost or possibly LAN 
+// ATM doesn't manage security: use only localhost or possibly LAN
 const apiURL = [
   'http://',
   envVars.API_HOST,
@@ -64,7 +64,7 @@ const apiProxy = {
     "target": apiURL,
     "secure": false
   }
-}
+};
 
 const mongodbURL = [
   'mongodb://',
