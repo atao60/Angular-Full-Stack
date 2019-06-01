@@ -60,9 +60,9 @@ npm audit
 ng --version
 ```
 
-> About `zone.js`. It is pinned to version 0.8.29 ( `npm i -S zone.js@0.8.29`) to please @angular/core@7.2.15.
+> About `zone.js`. Its version is pinned to 0.8.29 to please @angular/core@7.2.15.
 
-> About `typescript`. It has been installed with version constrained to ">=3.1.1 <3.3" (`npm i -D typescript@">=3.1.1 <3.3"`) to please @angular/cli@7.3.9.
+> About `typescript`. Its version is constrained to ">=3.1.1 <3.3" to please @angular/cli@7.3.9.
 
 ## Run
 
