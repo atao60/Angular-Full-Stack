@@ -20,16 +20,16 @@ Other tools and technologies used:
 * [Angular 2 JWT](https://github.com/auth0/angular2-jwt): JWT helper for Angular 2+
 * [Bcrypt.js](https://github.com/dcodeIO/bcrypt.js): password encryption
 
-## Prerequisites
+## Prerequisites<sup>(1)</sup>
 
-1. [Git](https://git-scm.com/) <sup>(1)</sup>
-2. [Node.js](https://nodejs.org/en/download/)
-3. [npm](https://www.npmjs.com/) - comes with Node.js
-4. [MongoDB](https://www.mongodb.com/download-center/community)
-5. [Chrome](https://www.google.com/chrome/)
-6. [Angular-CLI](https://cli.angular.io/)
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/en/download/)
+* [Npm](https://www.npmjs.com/) - comes with Node.js
+* [MongoDB](https://www.mongodb.com/download-center/community)
+* [Chrome](https://www.google.com/chrome/)
+* [Angular-CLI](https://cli.angular.io/)
 
-Check softwares' status:
+Check prerequisites' status:
 ```bash
 git --version
 mongod --version
@@ -38,7 +38,8 @@ npm --version
 google-chrome --version # (2)
 npm list -g --depth 0 2>&1 | grep @angular/cli # (3)
 ```
-> <sup>(1)</sup> About installing Git, see [How to Install Git on Linux, Mac or Windows](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/), January 29, 2019 by Linode.
+> <sup>(1)</sup> About installing Git, see [How to Install Git on Linux, Mac or Windows](https://www.linode.com/docs/development/version-control/how-to-install-git-on-linux-mac-and-windows/), January 29, 2019 by Linode.  
+About installing Node.js, Npm, Node & Angular-CLI, see e.g. [How to Install and Setup Angular 7 on Ubuntu 18.04.1](https://www.techomoro.com/how-to-install-and-setup-angular-7-on-ubuntu-18-04-1/), October 31, 2018 by Syamlal CM. For others OS, adequate similar articles are available on the net.
 
 > <sup>(2)</sup> To avoid trouble with Protractor 5.4.2, Node version should be at least 10.15.3 and Chrome version at least 74.0.3729.131-1. Check that `webdriver-manager` is in version 12.1.4. If needed, run `npm i -D protractor`: with Node 10.15.3+, it will update `webdriver-manager` with the requiered version.
 
@@ -60,9 +61,7 @@ npm audit
 ng --version
 ```
 
-> About `zone.js`. Its version is pinned to 0.8.29 to please @angular/core@7.2.15.
-
-> About `typescript`. Its version is constrained to ">=3.1.1 <3.3" to please @angular/cli@7.3.9.
+> About `typescript`: its version is constrained to ">=3.4 <3.5" to please @angular/compiler-cli and @angular-devkit/build-angular.
 
 ## Run
 
