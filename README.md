@@ -74,16 +74,20 @@ npm run dev:start
 ```
 With [concurrently](https://github.com/kimmobrunfeldt/concurrently), it will launch MongoDB and execute the application with Angular build, TypeScript compiler and Express server.
 
-Open a browser at [localhost:4200](http://localhost:4200). Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
+Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
 
-### Production (Stage) mode
+Open a browser at [localhost:4200](http://localhost:4200). 
+
+### Stage mode
 
 Run the application:
 
 ```bash
 npm run stage:start
 ```
-It will launch MongoDB, build the project with a production bundle and AOT compilation then run it with server listening at [localhost:3000](http://localhost:3000).
+It will launch MongoDB, build the project with a production bundle and AOT compilation then run it.
+
+Open a browser at [localhost:3000](http://localhost:3000).
 
 ## Preview
 
