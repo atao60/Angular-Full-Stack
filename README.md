@@ -1,8 +1,6 @@
 # MEAN Full Stack [![Dependencies](https://david-dm.org/atao60/MEAN-full-Stack.svg)](https://david-dm.org/atao60/MEAN-Full-Stack) [![MIT license](http://img.shields.io/badge/license-MIT-lightgrey.svg)](http://opensource.org/licenses/MIT)
 
 
-https://github.com/atao60/MEAN-Full-Stack
-
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoDB](https://www.mongodb.com): database
 * [**E**xpress.js](https://expressjs.com): backend web application framework running on top of Node.js
@@ -113,6 +111,12 @@ Run `npm run lint:html` to execute the frontend HTML linting via [HTMLHint](http
 
 Run `npm run lint:scss` to execute the frontend SCSS linting via [SASS-Lint](https://github.com/sasstools/sass-lint).
 
+## Running bundle analyser
+
+First run `npm run build` (without AOP) or `npm run client:prod:build` (with AOP).
+
+Then run either `npm run bundle-report-es5`, `npm run bundle-report-es6` or both: each script will open a browser tab with sizes of output files.
+
 ## Wiki
 
 To get more help about this project, [visit the project wiki](https://github.com/atao60/MEAN-Full-Stack/wiki).
@@ -123,6 +127,7 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 ## Roadmap
 
+* PWA
 * Socket.io
 * WebComponent
 * I18n
@@ -141,6 +146,8 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * [mkg20001/wait-for-mongo](https://github.com/mkg20001/wait-for-mongo)
 
 * [vielhuber/from-env](https://github.com/vielhuber/from-env)
+
+* [Analyzing bundle size with the Angular CLI and Webpack](https://coryrylan.com/blog/analyzing-bundle-size-with-the-angular-cli-and-webpack), Cory Rylan, Mar 1, 2017, Updated Feb 25, 2018 (with Angular 8).
 
 ## License
 

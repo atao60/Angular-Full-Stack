@@ -10,7 +10,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "build": "ng build --prod",
+    "build": "ng build --prod --stats-json",
     "start": "npm run server:dev:start",
     "mongo:clear": "rimraf .private/data/db/*",
     "build:clear": "rimraf dist/*",
@@ -24,7 +24,7 @@
     "server:dev:start": "nodemon",
     "dev": "concurrently -n \"proxy,server\" -c \"green.bold,yellow.bold\" \"npm run client:start\" \"npm run server:dev:start\"",
     "dev:start": "concurrently -n \"mongo,app\" -c \"blue.bold,white.bold\" \"npm run mongo:start\" \"npm run dev\"",
-    "client:prod:build": "ng build --aot --prod",
+    "client:prod:build": "ng build --aot --prod --stats-json",
     "preserver:prod:start": "npm run client:prod:build",
     "server:prod:start": "npm run server:build & node dist/server/app.js",
     "stage:start": "concurrently -n \"mongo,server\" -c \"blue.bold,yellow.bold\" \"npm run mongo:start\" \"npm run server:prod:start\"",
@@ -43,6 +43,8 @@
     "server:lint": "tslint --project server/tsconfig.json --config tslint.json server/**/**.ts{,x} & echo-cli 'All lint rules checked with success'",
     "pree2e:start": "tsc -p e2e",
     "e2e:start": "ng e2e",
+    "bundle-report-es5": "webpack-bundle-analyzer dist/public/stats-es5.json",
+    "bundle-report-es6": "webpack-bundle-analyzer dist/public/stats-es2015.json -p 8889",
     "postinstall": "npm run fonts:install",
     "prefonts:install": "mkdirp ./client/stylesheets",
     "fonts:install": "concurrently \"npm run raleway-fonts:install\" \"npm run lato-fonts:install\"",
@@ -122,6 +124,7 @@
     "ts-node": "^8.2.0",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": ">=3.4 <3.5"
+    "typescript": ">=3.4 <3.5",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }
