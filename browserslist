@@ -4,6 +4,9 @@
 #
 # For IE 9-11 support, please remove 'not' from the last line of the file and adjust as needed
 
+# Note. With the configuration below and target = es2015 in tsconfig.json, `ng build` will generate
+#       two sets of binary, one "es5" and an other one "es2015".
+
 > 0.5%
 last 2 versions
 Firefox ESR
